@@ -23,6 +23,7 @@
 
             if($objResult["Status"] == "ADMIN")
             {
+
                 header("location:manage.php");
             }
             else
@@ -32,6 +33,7 @@
         }
         else{
             echo "Username and Password Incorrect!";
+            header('Location: login.php');
         }
     }
     else{

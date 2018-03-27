@@ -68,14 +68,12 @@
                                         </tr>
                                     </table>
                                 </form>
-                                <?php
-                                    $con = mysqli_connect("localhost", "chiangmaibus", "g=up'.s,j", "chiangmaibus");
-                                    mysqli_set_charset($con,"utf8");
+                                <?php include 'connect-mysql.php';
 
                                     $sql = "select * from driver_info WHERE firstname LIKE '%".$strKeyword."%' ";
-
-                                    $query = mysqli_query($con, $sql);
+                                    $query = mysqli_query($objCon, $sql);
                                 ?>
+
                                 <div class="col-lg-12">
                                     <table class="table table-bordered table-hover" >
                                         <thead>
@@ -94,7 +92,7 @@
                                             </tr> 
                                         </thead>
                                         <tbody>
-                                        <?php while($result=mysqli_fetch_array($query,MYSQLI_ASSOC)) { ?>
+                                        <?php while($result = mysqli_fetch_array($query,MYSQLI_ASSOC)) { ?>
                                             <tr>
                                                 <td><div align="center"><?php echo $result['id']; ?></div></td>
                                                 <td><?php echo $result['firstname']; ?></td>
@@ -125,7 +123,7 @@
                                 <?php include 'connect-mysql.php';
 
                                     $sql = "select * from driver_vote ORDER BY driver ASC";
-                                    $query = mysqli_query($objCon, $sql);
+                                    $objQuery = mysqli_query($objCon, $sql);
 
                                 ?>
                                 <div class="col-lg-12">
@@ -139,12 +137,12 @@
                                             </tr> 
                                         </thead>
                                         <tbody>
-                                        <?php while($result = mysqli_fetch_array($query,MYSQLI_ASSOC)) { ?>
+                                        <?php while($ObjResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC)) { ?>
                                             <tr>
-                                                <td><div align="center"><?php echo $result['driver']; ?></div></td>
-                                                <td><div align="center"><?php echo $result['vote']; ?></div></td>
-                                                <td><?php echo $result['comment']; ?></td>
-                                                <td><?php echo $result['timestamp']; ?></td>
+                                                <td><div align="center"><?php echo $ObjResult['driver']; ?></div></td>
+                                                <td><div align="center"><?php echo $ObjResult['vote']; ?></div></td>
+                                                <td><?php echo $ObjResult['comment']; ?></td>
+                                                <td><?php echo $ObjResult['timestamp']; ?></td>
                                             </tr>
                                             <?php } ?>
                                         </tbody>
