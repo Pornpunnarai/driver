@@ -24,7 +24,7 @@
             if($objResult["Status"] == "ADMIN")
             {
 
-                header("location:manage.php");
+                header("location:register.php");
             }
             else
             {

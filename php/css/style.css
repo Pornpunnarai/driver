@@ -65,7 +65,7 @@ body {
     line-height:20px;
 }
 a {
-    font-size: 25px;
+    font-size: 18px;
     color:#181A1C;
     text-decoration: none;
 }
@@ -129,9 +129,10 @@ p {
     padding: 7px;
 }
 .navbar {
-    background: #181A1C;
+    background: #2e3f50;
     margin-bottom:0;
-    min-height:70px;
+    /*min-height:70px;*/
+    height: 60px;
 }
 
 .navbar-fixed-top {

@@ -14,13 +14,6 @@ $nationnal_id=trim($_POST['txtNational_id']);
 $licence_id=trim($_POST['txtLicense_id']);
 $type=trim($_POST['txtType']);
 
-//echo $highest_id."<br>";
-//echo $firstname."<br>";
-//echo $lastname."<br>";
-//echo $phone."<br>";
-//echo $car_id."<br>";
-//echo $nationnal_id."<br>";
-//echo $licence_id."<br>";
 
  $sql = "insert into `driver_info`(id,firstname,lastname,phone,car_id,nationnal_id,licence_id,type) values('$highest_id', '$firstname', '$lastname', '$phone', '$car_id', '$nationnal_id', '$licence_id','$type')";
  $query = mysqli_query($objCon,$sql);

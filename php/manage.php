@@ -42,42 +42,6 @@
                     <li><a href="#" rel="country3">คะแนนคนขับรถ</a></li>
                 </ul>
 
-                <div id="country1" class="tabcontent">
-                    <div class="map-wrapper">
-                    <div class="container">
-                        <div class="row-fluid">
-                            <div class="span contact-form centered">
-                                <h3>กรุณากรอกข้อมูลให้ครบถ้วน</h3>
-                                <form action="upload.php" method="post" enctype="multipart/form-data" name="f1">
-                                    <div>
-                                        <input class="span4" name="txtFirstname" type="text" id="txtFirstname" placeholder="* ชื่อ"  size="20">
-                                        <input class="span4" name="txtLastname" type="text" id="txtLastname" placeholder="* นามสกุล"  size="20" >
-                                    </div>
-                                    <div>
-                                        <input class="span4" name="txtPhone" type="text" id="txtPhone" placeholder="* เบอร์โทรศัพท์"  size="20" >
-                                        <input class="span4" name="txtCar_id" type="text" id="txtCar_id" placeholder="* หมายเลขทะเบียนรถ"  size="20" >
-                                    </div>
-                                    <div>
-                                        <input class="span4" name="txtNational_id" type="text" id="txtNational_id" placeholder="* เลขประจำตัวประชาชน"  size="20" >
-                                        <input class="span4" name="txtLicense_id" type="text" id="txtLicense_id" placeholder="* เลขที่ใบอนุญาตขับขี่"  size="20" >
-                                    </div>
-                                    <div>
-                                      <input class="span2" name="txtType" type="text" id="txtType" placeholder="* กลุ่ม เช่น A B C"  size="20" >
-                                    </div>
-                                    <div>
-                                        <input class="message-btn" type="file" name="fileUpload" >
-                                    </div>
-                                    <div class="control-group">
-                                        <div class="controls">
-                                            <button name="submit" id="submit" type="submit" class="message-btn">UPLOAD</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
 
                 <div id="country2" class="tabcontent">
                 <div class="map-wrapper">

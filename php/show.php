@@ -16,8 +16,6 @@
 
             $data = $_REQUEST['id'];
 
-            echo $data;
-
             $sql="SELECT firstname,lastname,phone,car_id,licence_id FROM driver_info where id =".$data;
             $query = $db->query($sql);
             //echo "<pre>".print_r($query->fetch(2), true)."</pre>";
