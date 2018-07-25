@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ลงทะเบียนคนขับรถแดง</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        .navbar .nav > li:hover> a, .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+            border: 0px solid #2e3f50;
+            color: #fff;
+            background-color: #2e3f50;
+            transition: border-color 1s ease;
+        }
+        .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+            background-color: #2e3f50;
+            border-color: #2e3f50;
+        }
+        #page-wrapper {
+            background-color: #2e3f5000;
+        }
+        .divform{
+            margin-bottom: 2px;
+        }
+        .sidebar ul li a:active{
+            background-color: #eeeeee00;
+        }
+        body{
+            background-color: #2e3f501a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" style="margin-bottom: 0; border-radius: 0px;">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html" style="font-size: 25px;color: white;margin-top: 1vh;">CM-TRANSIT</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- /.dropdown -->
+            <a class="btn btn-warning" href="logout.php" style="justify-content: center; margin: 12px;">LOGOUT</a>
+            <li class="dropdown">
+
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white; margin-top: 5px;">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <!-- /.dropdown-user -->
+            </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation" style="margin-top: 7vh;">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+
+                    <li class="nav-item">
+                        <a href="#mapselected">
+                            <i class="fa fa-map-o fa-fw"></i>
+                            <span class="nav-link-text">Map</span>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="mapselected">
+                            <li class="nav-item">
+                                <a href="#typemapselected">รถเทศบาลเชียงใหม่</a>
+                                <ul class="sidenav-third-level" id="typemapselected">
+                                    <li class="nav-item">
+                                        <a  href="">B1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">B2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#rtc-map-selected">RTC</a>
+                                <ul class="sidenav-third-level" id="rtc-map-selected">
+                                    <li class="nav-item">
+                                        <a  href="">R1G-Zoo-Cen</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">R1P-Cen-Zoo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">R2R</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">R2L</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">R3Y</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a  href="">R3R</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a  href="">รถตู้ขวัญเวียง</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="">ทุกเส้นทาง</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="">Clear Station</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href=""><i class="fa fa-map-signs fa-fw"></i>
+                            <span class="nav-link-text">Bus Stop</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href=""><i class="fa fa-times-circle-o fa-fw"></i>
+                            <span class="nav-link-text">Route & Timetable</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#driver-selected"><i class="fa fa-user fa-fw"></i>
+                            <span class="nav-link-text">Driver</span>
+                        </a>
+                        <ul class="sidenav-second-level" id="driver-selected">
+                            <li class="nav-item">
+                                <a href="register.php"><i class="fa fa-dashboard fa-fw"></i> ลงทะเบียน</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="alldriver.php"><i class="fa fa-table fa-fw"></i> ข้อมูลคนขับรถ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="votedriver.php"><i class="fa fa-files-o fa-fw"></i>คะแนนคนขับรถ</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--<li class="nav-item">-->
+                        <!--<a href="register.php"><i class="fa fa-dashboard fa-fw"></i>Promotion</a>-->
+                    <!--</li>-->
+                    <!--<li class="nav-item">-->
+                        <!--<a href="register.php"><i class="fa fa-dashboard fa-fw"></i>About Us</a>-->
+                    <!--</li>-->
+                    <!--<li class="nav-item">-->
+                        <!--<a href="register.php"><i class="fa fa-dashboard fa-fw"></i>Contact Us</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+    </nav>
+
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

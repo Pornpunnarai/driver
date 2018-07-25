@@ -78,9 +78,9 @@
         }
 
         if ($(this).scrollTop() > 130) {
-            $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
+            $('.navbar.html').addClass('navbar-fixed-top animated fadeInDown');
         } else {
-            $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
+            $('.navbar.html').removeClass('navbar-fixed-top animated fadeInDown');
         }
 
         // Get container scroll position
@@ -132,7 +132,7 @@
 
                         //Hack collapse top navigation after clicking
                         topMenu.parent().attr('style', 'height:0px').removeClass('in'); //Close navigation
-                        $('.navbar .btn-navbar').addClass('collapsed');
+                        $('.navbar.html .btn-navbar.html').addClass('collapsed');
 
                         var targetOffset = $target.offset().top - 63;
                         $('html, body').animate({

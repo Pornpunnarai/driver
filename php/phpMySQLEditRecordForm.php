@@ -14,7 +14,7 @@
       <div class="container">
         <div class="span9 center contact-info">
           <div class="title">
-            <h2>ระบบจัดการฐานข้อมูลคนขับรถยนต์สี่ล้อแดงจังหวัดเชียงใหม่</h2>
+            <h2>CM-TRANSIT</h2>
           </div>
         </div>
         <div class="map-wrapper">

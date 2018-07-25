@@ -24,7 +24,7 @@
             if($objResult["Status"] == "ADMIN")
             {
 
-                header("location:register.php");
+                header("location:map.php");
             }
             else
             {

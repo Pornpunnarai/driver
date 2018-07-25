@@ -69,7 +69,7 @@ if($_SESSION['Status'] != "ADMIN")
 ?>
 <div id="wrapper">
     <!-- Navigation -->
-    <?php include 'navbar';
+    <?php include 'navbar.html';
     ?>
 
     <div id="page-wrapper">

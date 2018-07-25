@@ -55,7 +55,7 @@
 
 <div id="wrapper">
     <!-- Navigation -->
-    <?php include 'navbar'?>
+    <?php include 'navbar.html' ?>
 
     <div id="page-wrapper">
         <div class="row">
