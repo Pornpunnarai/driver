@@ -131,6 +131,7 @@ if($_SESSION['Status'] != "ADMIN")
                                             <td><div align="center"><?php echo $result['nationnal_id']; ?></div></td>
                                             <td><div align="center"><?php echo $result['licence_id']; ?></div></td>
                                             <td><div align="center"><?php echo $result['type']; ?></div></td>
+<!--                                            <td></td>-->
                                             <td><div align="center"><img src="img/<?php echo $result['id']; ?>.jpg" alt="" style="width:100px;"></div></td>
                                             <td><div align="center"><a href="edit_driver_info.php?ID=<?php echo $result['id']; ?>">Edit</a></div></td>
                                         </tr>

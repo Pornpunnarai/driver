@@ -18,13 +18,14 @@ $objQuery = mysqli_query($objCon, $strSQL);
 if($objQuery)
 {
   echo "Save Done.";
-  print "<a href='http://chiangmaibus.org/driver/php/data.php?page=1'>Back to main page</a>";
+//  print "<a href='http://chiangmaibus.org/driver/php/data.php?page=1'>Back to main page</a>";
+    header('location: alldriver.php');
 }
 else
 {
   echo "Error Save [".$strSQL."]";
 }
-mysqli_close($objcon);
+//mysqli_close($objcon);
 ?>
 </body>
 </html>
