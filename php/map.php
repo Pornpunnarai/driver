@@ -104,6 +104,7 @@
 </script>
 
 <script>
+    var car;
     var map;
     var flightPath;
     var flightPath1;
@@ -126,6 +127,7 @@
         "35.805v-7.872l2.729-0.355v10.048L19.328,35.805z";
 
     function initMap() {
+        car = "all";
         var location = {
             lat: 18.787635,
             lng: 98.985683
@@ -212,21 +214,30 @@
         removeLine();
         clearMarkers();
         markers = [];
-        addR1_Go()();
+        addR1_Go();
+        setMapOnCar(null);
+        car = "เขียว";
+        getCarlocation();
     });
-    $('#stationR1B').click(function() {
+    $('#stationR1P').click(function() {
 
         removeLine();
         clearMarkers();
         markers = [];
-        addR1_Back()();
+        addR1_Back();
+        setMapOnCar(null);
+        car = "น้ำเงิน";
+        getCarlocation();
     });
-    $('#stationR3L').click(function() {
+    $('#stationR3Y').click(function() {
 
         removeLine();
         clearMarkers();
         markers = [];
         addR3_Left();
+        setMapOnCar(null);
+        car = "เหลือง";
+        getCarlocation();
     });
     $('#stationR3R').click(function() {
 
@@ -234,6 +245,9 @@
         clearMarkers();
         markers = [];
         addR3_Right();
+        setMapOnCar(null);
+        car = "แดง";
+        getCarlocation();
     });
     $('#stationALL').click(function() {
         removeLine();
@@ -1118,6 +1132,7 @@
     }
 
     function getCarlocation(type) {
+console.log(car);
         $.getJSON("CM_CAR/API", function(jsonBus1) {
             clearMarkCar();
             carMark = [];
@@ -1203,7 +1218,8 @@
                     var car_detail =carB1.Detail;
                     // var array = car_detail.split(',');
                     //if(array[0]=="R3") {
-                    if(carB1.Type=="bus"||carB1.Type=="") {
+                    if(carB1.Type=="bus") {
+                        if(carB1.Color==car){
                         var markBusB1 = new google.maps.Marker({
                             position: new google.maps.LatLng(carB1.LaGoogle, carB1.LongGoogle),
                             map: map,
@@ -1228,6 +1244,36 @@
                                 info.open(map, markBusB1);
                             }
                         })(markBusB1, i));
+                        }
+                        if(car=="all"){
+                            var markBusB1 = new google.maps.Marker({
+                                position: new google.maps.LatLng(carB1.LaGoogle, carB1.LongGoogle),
+                                map: map,
+                                title: carB1.Registerid,
+                                icon: {
+                                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                                    scale: 5,
+                                    strokeColor: 'white',
+                                    strokeWeight: .01,
+                                    fillOpacity: 1,
+                                    fillColor: color,
+                                    // offset: '5%',
+                                    rotation: parseFloat(carB1.Direction)
+                                }
+                            });
+
+                            carMark.push(markBusB1);
+                            info = new google.maps.InfoWindow();
+                            google.maps.event.addListener(markBusB1, 'click', (function (markBusB1, i) {
+                                return function () {
+                                    getInfo(carB1);
+                                    info.open(map, markBusB1);
+                                }
+                            })(markBusB1, i));
+                        }
+
+
+
                     }
                 }
             });
